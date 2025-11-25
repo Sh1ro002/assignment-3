@@ -1,3 +1,4 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -15,7 +16,9 @@ var app = express();
 //el mongoose >:3
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/yugioh');
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch(err => console.log(err));
 
 const database = mongoose.connection;
 //error handling + success msg
