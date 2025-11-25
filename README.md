@@ -1,3 +1,5 @@
+CSS FILE IS MINE. ITS AN UPDATED ONE FROM OUR WEBPAGE PROJECT
+
 The idea I came up with is basically a deck storage system for Yu-Gi-Oh! called “Tsuchinokard”. It is named after one the game’s more recent beloved characters called Tsuchinoko who is also the mascot of the page and the background. 
 
 Basically what the system does is it allows the user to create, edit, delete and view all their decks in one place. It allows the user to input monster cards, spells, traps, and extra deck cards all into a deck list which they can then edit or view at any time. This is particularly useful for tournament situations where you don't want to take out your deck in order to fill out your deck list. Instead you can either print a screenshot of the “view deck” which shows all the cards you are using, or you can just copy down your deck using pen and paper from that screen. Super simple and practical. 
