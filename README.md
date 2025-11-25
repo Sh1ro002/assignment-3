@@ -5,6 +5,7 @@ Basically what the system does is it allows the user to create, edit, delete and
 Rough Website Views Plan
 
 HOME PAGE
+
 Create Deck
 - Input Name, Monsters, Spells, Traps, Extra Deck, Save
   - Saved Success/Fail
