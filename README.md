@@ -9,10 +9,12 @@ HOME PAGE
 Create Deck
 - Input Name, Monsters, Spells, Traps, Extra Deck, Save
   - Saved Success/Fail
+
 Edit Deck
 - Select deck
   - Edit name, monsters, spells, traps, extra deck, save, delete
     - Saved/deleted success/fail
+
 View Deck
 - Select Deck
   - View Deck 
