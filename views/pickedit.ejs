@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+
+<h1>Select Deck :3</h1>
+
+<!--pick edit and pick view are pmuch the same only diff is where the decks link to obv-->
+<div class="deck-list">
+  <% if (decks.length === 0) { %>
+    <p>No decks available... You should make one!</p>
+  <% } else { %>
+    <% decks.forEach(deck => { %>
+      <div class="deck-card">
+        <strong><%= deck.name %></strong>
+        <br>
+        <a href="/decks/edit/<%= deck._id %>">Edit Deck</a>
+      </div>
+    <% }) %>
+  <% } %>
+</div>
+
+<%- include('partials/footer') %>

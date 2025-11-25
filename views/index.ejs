@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+<!--need for the page to not nuke itself. if the variable type for deck is not undefined, use deck
+if it is undefined, then make the deck variable null so that SOMETHING exists.-->
+<% var deck = typeof deck !== 'undefined' ? deck : null; %>
+<div id="wrapper">
+  <div id="banner">
+    <h1 style="text-align: center;">Tsuchinokard</h1>
+  </div>
+  <button class="button create-button" onclick="document.location='/create'" style="display: block; margin: 0 auto;">Create New Deck</button>
+<br>
+<!--there were issues before with loading the home page while a deck didnt exist. so for extra safety i locked out the view and edit options 
+in the event that the only deck is either null or no descks exist-->
+<% if (deck) { %>
+  <button class="button edit-button" onclick="document.location='/decks/pickedit'" style="display: block; margin: 0 auto;">Edit Deck</button>
+  <br>
+  <button class="button view-button" onclick="document.location='/decks/pickview'" style="display: block; margin: 0 auto;">View Deck</button>
+<% } else { %>
+  <button class="button edit-button" disabled style="display: block; margin: 0 auto;">Edit Deck</button>
+  <br>
+  <button class="button view-button" disabled style="display: block; margin: 0 auto;">View Deck</button>
+<% } %>
+<%- include('partials/footer') %>

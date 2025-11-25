@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+
+<h1>Select Deck :3</h1>
+
+<div class="deck-list">
+  <% if (decks.length === 0) { %>
+    <p>No decks available... You should make one!</p>
+  <% } else { %>
+    <% decks.forEach(deck => { %>
+      <div class="deck-card">
+        <strong><%= deck.name %></strong>
+        <br>
+        <a href="/decks/view/<%= deck.name %>">View Deck</a>
+      </div>
+    <% }) %>
+  <% } %>
+</div>
+
+<p>
+    <a href="/" class="button" style="margin-top:20px; display:inline-block;">Go to Home Page</a>
+</p>
+
+<%- include('partials/footer') %>

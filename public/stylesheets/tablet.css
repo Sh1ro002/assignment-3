@@ -1,0 +1,255 @@
+@charset "UTF-8";
+/* Color Scheme : #6C2AF5, #AC93F4, #F46EE5, #F59F84, #F46175*/
+/* The body tag style applies to all elements on the page */
+body {
+    /*background-color: rgb(0, 0, 0);*/
+    background: yellow; 
+    background: -moz-linear-gradient(left, red 0%, yellow 100%); 
+    background: -webkit-linear-gradient(left, red 0%, yellow 100%); 
+    background: -o-linear-gradient(left, red 0%, yellow 100%); 
+    background: linear-gradient(to right, red 0%,yellow 100%);
+    font-family: Verdana, Geneva, Arial, sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+header
+{
+   color: white; 
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+footer
+{
+   background-color: slategray;
+   color: white; 
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+address
+{
+    margin-left: 15px;
+}
+aside
+{
+    background-color: antiquewhite;
+    float: right;
+    margin: 5px;
+    padding: 5px;
+    width: 250px;
+}
+/* The wrapper ID style is used with a div tag to provide a 960px wide page */
+#wrapper {
+    width: 66%;
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    /*background-color: blue;*/
+}
+
+/* The right-column ID style is floated right */
+#right-column {
+    float: right;
+    width: 66%;
+    height: 600px;
+}
+mark
+{
+    background-color: green;
+}
+figure
+{
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 5px;
+    padding: 5px;
+}
+figcaption
+{
+    position: absolute;
+    bottom: 0;
+    background-color: black;
+    color: white;
+    width: 200px
+}
+article
+{
+    height: 520px;
+}
+/* The left-column ID style is floated left */
+#left-column {
+    float: left;
+    width: 33%;
+    background-color: silver;
+    height: 600px;
+}
+/* Defining a style for a set of tags separated by commas applies the style to all tags */
+h1,h2,h3,h4,h5,h6,p,li {
+    margin-left: 15px;
+}
+
+#footer {
+    clear: both;
+    position: bottom;
+    height: 200px;
+    margin-top: -200px;
+}
+
+#banner {
+    height: 120px;
+}
+
+/* Defining a style for a set of tags not separated by commas applies the style only to all tags within the preceding tag*/
+#banner h1 {
+    color: white;
+}
+
+/* Advanced Web design relies on class or ID styles, never tables */
+.box {
+    height: 100px;
+    width: 100px;
+    float: left;
+    background-color: rgb(73, 214, 54);
+    margin: 15px;
+    padding: 25px;
+    opacity: .5;
+    border-radius: 75px;
+}
+
+/* The following pseudo-class applies to the box class when in a hovered state */
+.box:hover {
+    opacity: 1;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e4f5fc+0,bfe8f9+50,9fd8ef+60,2ab0ed+100 */
+background: radial-gradient(ellipse at center,  rgba(228,245,252,1) 0%,rgba(191,232,249,1) 50%,rgba(159,216,239,1) 60%,rgba(42,176,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+}
+
+/* This clear class style terminates float */
+.clear {
+    clear: both;
+}
+
+video
+{ 
+    width: 400px; 
+    padding: 15px; 
+    margin: 15px; 
+    background-color:black; 
+    border:2px white solid; 
+    box-shadow: 10px 10px 5px black;
+}
+button 
+{
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: 50% 30%;
+color:white;
+height:25%;
+width:45%; 
+border:2px white solid;
+box-shadow: 10px 10px 5px black;
+border-radius: 5px;
+font-weight: bold;
+-webkit-text-stroke-width: 1px;
+-webkit-text-stroke-color: black;
+}
+
+.view-button
+{
+    background: url("/assets/images/view.png");
+    background-position: 50% 20%;
+}   
+
+.edit-button
+{
+    background: url("/assets/images/edit.png");
+}  
+
+.create-button
+{
+    background: url("/assets/images/create.png");
+    background-position: 5% 50%;
+}  
+
+button:hover 
+{ 
+    background-color:beige; 
+    color:black; 
+    height:25%; 
+    border:2px white solid; 
+    border-radius: 5px; 
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+/*Pressing effect. When pressed, creates a shadow under the button and moves
+the button down by a few pixels to give it the illusion of being pressed down*/
+button:active 
+{ 
+    box-shadow: 5px 5px 5px black; 
+    transform: translateY(4px); 
+}
+
+.deck-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* space between cards */
+}
+
+.deck-card {
+  background-color: white;
+  border: 2px solid black;
+  padding: 15px 20px;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.deck-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+}
+
+.deck-card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.deck-card a:hover {
+  background-color: #333;
+}
+
+.deck-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.deck-section {
+  background-color: white;
+  border: 2px solid black;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.deck-section h2 {
+  margin-top: 0;
+  border-bottom: 1px solid #000;
+  padding-bottom: 5px;
+}
+
+.card-item {
+  padding: 5px 0;
+  font-size: 16px;
+}

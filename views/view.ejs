@@ -1,0 +1,57 @@
+<%- include ('partials/header') %>
+
+<h1><%= deck.name %></h1>
+
+<div class="deck-container">
+<!--loop through all cards of the specific type(monster here) and dispay each of em with their count
+the strong is just a bold thing so it would be like "Ehther x3" or "Destroy x2"-->
+  <% if (deck.monsters.length > 0) { %>
+    <div class="deck-section">
+      <h2>Monsters</h2>
+      <% deck.monsters.forEach(card => { %>
+        <div class="card-item">
+          <strong><%= card.name %></strong> × <%= card.count %>
+        </div>
+      <% }) %>
+    </div>
+  <% } %>
+
+  <% if (deck.spells.length > 0) { %>
+    <div class="deck-section">
+      <h2>Spells</h2>
+      <% deck.spells.forEach(card => { %>
+        <div class="card-item">
+          <strong><%= card.name %></strong> × <%= card.count %>
+        </div>
+      <% }) %>
+    </div>
+  <% } %>
+
+  <% if (deck.traps.length > 0) { %>
+    <div class="deck-section">
+      <h2>Traps</h2>
+      <% deck.traps.forEach(card => { %>
+        <div class="card-item">
+          <strong><%= card.name %></strong> × <%= card.count %>
+        </div>
+      <% }) %>
+    </div>
+  <% } %>
+
+  <% if (deck.extra.length > 0) { %>
+    <div class="deck-section">
+      <h2>Extra Deck</h2>
+      <% deck.extra.forEach(card => { %>
+        <div class="card-item">
+          <strong><%= card.name %></strong> × <%= card.count %>
+        </div>
+      <% }) %>
+    </div>
+  <% } %>
+
+</div>
+
+<p>
+    <a href="/" class="button" style="margin-top:20px; display:inline-block;">Go to Home Page</a>
+</p>
+<%- include ('partials/footer') %>

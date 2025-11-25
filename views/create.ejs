@@ -1,0 +1,46 @@
+<%- include ('partials/header') %>
+<h1>Create Deck :3</h1>
+<form action="/decks/create" method="POST">
+    <input name="name" placeholder="Deck Name" required><br>
+
+    <h2>Monsters</h2>
+    <div id="monster-container"></div>
+    <button type="button" onclick="addCard('monster')">Add Monster</button>
+
+    <h2>Spells</h2>
+    <div id="spell-container"></div>
+    <button type="button" onclick="addCard('spell')">Add Spell</button>
+
+    <h2>Traps</h2>
+    <div id="trap-container"></div>
+    <button type="button" onclick="addCard('trap')">Add Trap</button>
+
+    <h2>Extra Deck</h2>
+    <div id="extra-container"></div>
+    <button type="button" onclick="addCard('extra')">Add Extra Deck Card</button>
+    <br><br>
+    <button type="submit">Create</button>
+</form>
+
+<!--this is how cards actually get added.
+so step by step right, when the user clicks to add a new card, it creates an input for that cards name and quantity
+and it also adds a delete button. then the card gets added and appended to the wrapper
+so it shows up properly under the right category. we check for validity later :3-->
+<script>
+function addCard(type) {
+  const container = document.getElementById(`${type}-container`);
+
+  const wrapper = document.createElement("div");
+  wrapper.className = "card-item";
+  wrapper.style.marginBottom = "10px";
+
+  wrapper.innerHTML = `
+    <input name="${type}Name[]" placeholder="Card Name" required>
+    <input name="${type}Count[]" type="number" min="1" value="1" required>
+    <button type="button" onclick="this.parentElement.remove()">X</button>
+  `;
+
+  container.appendChild(wrapper);
+}
+</script>
+<%- include ('partials/footer') %>

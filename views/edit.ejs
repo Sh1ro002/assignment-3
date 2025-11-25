@@ -1,0 +1,89 @@
+<%- include('partials/header') %>
+<h1>Deck Editing :3</h1>
+
+<form action="/decks/edit/<%= deck._id %>" method="POST">
+
+    <label>Deck Name:</label>
+    <input type="text" name="name" value="<%= deck.name %>" required>
+    <br><br>
+
+    <!--for editing this is what each will look like. after u get the deck, it displays
+    each card (monster here) with the same options as create a deck. only diff is this only 
+    alters values in a pre-existing deck. same for spells traps n extra deck.
+    there is also a button at the bottom to add cards. just like in create a deck-->
+    <h2>Monsters</h2>
+    <div id="monster-container">
+        <% deck.monsters.forEach(card => { %>
+            <div class="card-item" style="margin-bottom: 10px;">
+                <input name="monsterName[]" value="<%= card.name %>" required>
+                <input name="monsterCount[]" type="number" min="1" value="<%= card.count %>" required>
+                <button type="button" onclick="this.parentElement.remove()">X</button>
+            </div>
+        <% }) %>
+    </div>
+    <button type="button" onclick="addCard('monster')">Add Monster</button>
+
+
+    <h2>Spells</h2>
+    <div id="spell-container">
+        <% deck.spells.forEach(card => { %>
+            <div class="card-item" style="margin-bottom: 10px;">
+                <input name="spellName[]" value="<%= card.name %>" required>
+                <input name="spellCount[]" type="number" min="1" value="<%= card.count %>" required>
+                <button type="button" onclick="this.parentElement.remove()">X</button>
+            </div>
+        <% }) %>
+    </div>
+    <button type="button" onclick="addCard('spell')">Add Spell</button>
+
+
+    <h2>Traps</h2>
+    <div id="trap-container">
+        <% deck.traps.forEach(card => { %>
+            <div class="card-item" style="margin-bottom: 10px;">
+                <input name="trapName[]" value="<%= card.name %>" required>
+                <input name="trapCount[]" type="number" min="1" value="<%= card.count %>" required>
+                <button type="button" onclick="this.parentElement.remove()">X</button>
+            </div>
+        <% }) %>
+    </div>
+    <button type="button" onclick="addCard('trap')">Add Trap</button>
+
+
+    <h2>Extra Deck</h2>
+    <div id="extra-container">
+        <% deck.extra.forEach(card => { %>
+            <div class="card-item" style="margin-bottom: 10px;">
+                <input name="extraName[]" value="<%= card.name %>" required>
+                <input name="extraCount[]" type="number" min="1" value="<%= card.count %>" required>
+                <button type="button" onclick="this.parentElement.remove()">X</button>
+            </div>
+        <% }) %>
+    </div>
+    <button type="button" onclick="addCard('extra')">Add Extra Deck Card</button>
+
+
+    <br><br>
+    <button type="submit">Save Changes</button>
+
+</form>
+
+<!--i explained this in create alrdeady i will not be explainnint it again-->
+<script>
+function addCard(type) {
+    const container = document.getElementById(`${type}-container`);
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "card-item";
+    wrapper.style.marginBottom = "10px";
+
+    wrapper.innerHTML = `
+        <input name="${type}Name[]" placeholder="Card Name" required>
+        <input name="${type}Count[]" type="number" min="1" value="1" required>
+        <button type="button" onclick="this.parentElement.remove()">X</button>
+    `;
+
+    container.appendChild(wrapper);
+}
+</script>
+<%- include('partials/footer') %>
